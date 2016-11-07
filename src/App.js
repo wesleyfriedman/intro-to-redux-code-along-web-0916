@@ -24,4 +24,12 @@ function mapStateToProps(state) {
   return {shoppingListItems: state.shoppingListItems}
 }
 
-export default connect(mapStateToProps)(App);
+const connector = connect(mapStateToProps)
+const connectedComponent = connector(App)
+
+export default connectedComponent;
+
+// Bonus: show usual export default connect...
+// Bonus: container vs. presentational components: build actual list in shopping list component
+// with actions for next code-along, shoppingList here top level, dispatch action
+// then, bonus: container vs. presentational, props as callback functions
